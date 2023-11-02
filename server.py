@@ -1,22 +1,5 @@
 import socket, pickle
 
-
-def transpose_matrix(matrix):
-    new_matrix = []
-    for j in range(len(matrix[0])):
-        temp = []
-        for i in matrix:
-            temp.append(i[j])
-        new_matrix.append(temp)
-    return new_matrix
-
-
-def get_matrix_diagonals(matrix):
-    diagonal_1 = [matrix[0][0], matrix[1][1], matrix[2][2]]
-    diagonal_2 = [matrix[2][0], matrix[1][1], matrix[0][2]]
-    return diagonal_1, diagonal_2
-
-
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
 HOST = s.getsockname()[0]
