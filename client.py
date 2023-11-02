@@ -2,6 +2,7 @@ import socket
 import pickle
 import pygame
 
+
 def transpose_matrix(matrix):
     new_matrix = []
     for j in range(len(matrix[0])):
@@ -116,7 +117,7 @@ while running:
         isReady = True
 
     if mouse_y < h:
-        if isHod:
+        if isHod and not (crossWin or nullWin or nobody):
             if isCross:
                 rendered_font_cursor = font_cursor.render(cross, False, (0, 0, 0))
                 sc.blit(rendered_font_cursor, (mouse_x, mouse_y-30))
