@@ -63,16 +63,16 @@ clock = pygame.time.Clock()
 
 font = pygame.font.SysFont('Arial', 200, bold=True)
 font_cursor = pygame.font.SysFont('Arial', 80, bold=True)
-font_score = pygame.font.Font('font.ttf', 30)
-render_font_button = pygame.font.Font('font.ttf', 35).render("RESTART", False, (0, 0, 0))
+font_score = pygame.font.Font('fonts/font.ttf', 30)
+render_font_button = pygame.font.Font('fonts/font.ttf', 35).render("RESTART", False, (0, 0, 0))
 
-icon = pygame.image.load('icon.png')
+icon = pygame.image.load('img/icon.png')
 pygame.display.set_icon(icon)
 
-cursor = pygame.image.load('cursor.png')
+cursor = pygame.image.load('img/cursor.png')
 cursor = pygame.transform.scale(cursor, (40, 40))
 
-pointer = pygame.image.load('pointer.png')
+pointer = pygame.image.load('img/pointer.png')
 pointer = pygame.transform.scale(pointer, (40, 40))
 
 button_x, button_y = 200, 670
@@ -223,7 +223,7 @@ while running:
     else:
         ClientSocket.send("None".encode("utf-8"))
 
-    data = ClientSocket.recv(4096)
+    data = ClientSocket.recv(2048*2048)
     data_arr = pickle.loads(data)
     score1, score2 = data_arr[0], data_arr[1]
     name1, name2 = data_arr[2], data_arr[3]

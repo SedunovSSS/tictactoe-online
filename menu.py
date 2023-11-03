@@ -17,7 +17,7 @@ def main():
     color2 = color_inactive
     color3 = color_inactive
     pg.display.set_caption("CONNECT")
-    icon = pg.image.load('icon.png')
+    icon = pg.image.load('img/icon.png')
     pg.display.set_icon(icon)
     active = False
     active1 = False
